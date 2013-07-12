@@ -104,7 +104,7 @@ function getinfo(page)
 		$(".pagination").html(str);
 		str="";
 		for(i=0;i<row.length;i++)
-			str+="<tr><td><input type='checkbox' value='"+row[i].id+"' id='check'/></td><td><a href='/image/image_show/"+row[i].id+"' target='_blank'>"+row[i].title+"</a> &nbsp;&nbsp;<img src='/admin/views/images/headtopic_"+row[i].flag+".gif' /></td><td>"+row[i].short+"</td><td>"+row[i].update+"</td><td>"+row[i].writer+"</td><td><a href='/admin/imgarc/edit/"+row[i].addtable+"/"+row[i].id+"' id='edit'><img src='/admin/views/images/icons/pencil.png' alt='Edit' /></a> <a href='#' title='Delete' id='del'><img src='/admin/views/images/icons/cross.png' alt='Delete' /></a></td></tr>";
+			str+="<tr><td><input type='checkbox' value='"+row[i].id+"' id='check'/></td><td><a href='/image/image_show/"+row[i].id+"' target='_blank'>"+row[i].title+"</a> &nbsp;&nbsp;<img src='/admin/views/images/headtopic_"+row[i].flag+".gif' /></td><td>"+row[i].short+"</td><td>"+row[i].update+"</td><td>"+row[i].writer+"</td><td><a href='/admin/imgsarv/edit/"+row[i].addtable+"/"+row[i].id+"' id='edit'><img src='/admin/views/images/icons/pencil.png' alt='Edit' /></a> <a href='#' title='Delete' id='del'><img src='/admin/views/images/icons/cross.png' alt='Delete' /></a></td></tr>";
 		$("#rowinfo").html(str);
 		nextfun();
 	},"json");

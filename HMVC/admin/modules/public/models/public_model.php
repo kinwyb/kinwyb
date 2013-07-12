@@ -13,7 +13,7 @@ class Public_Public_model extends CI_Model
 	 */
 	public function arctype()
 	{
-		$this->load->driver("cache",array('adapter' => $this->config->item('cache_type'), 'backup' => 'dummy'));
+		! $this->ts_key('cache') AND $this->load->driver("cache",array('adapter' => $this->config->item('cache_type'), 'backup' => 'dummy'));
 		$menu=$this->cache->get('arctype');
 		if(!is_array($menu))
 		{
@@ -32,7 +32,7 @@ class Public_Public_model extends CI_Model
 	 */
 	public function menu()
 	{
-		$this->load->driver("cache",array('adapter' => $this->config->item('cache_type'), 'backup' => 'dummy'));
+		! $this->ts_key('cache') AND $this->load->driver("cache",array('adapter' => $this->config->item('cache_type'), 'backup' => 'dummy'));
 		$menu=$this->cache->get('menu');
 		if(!is_array($menu))
 		{

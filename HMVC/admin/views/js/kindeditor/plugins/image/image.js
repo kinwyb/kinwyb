@@ -221,7 +221,7 @@ KindEditor.plugin('image', function(K) {
 				self.loadPlugin('filemanager', function() {
 					self.plugin.filemanagerDialog({
 						viewType : 'VIEW',
-						dirName : 'images',
+						dirName : 'image',
 						clickFn : function(url, title) {
 							if (self.dialogs.length > 1) {
 								K('[name="url"]', div).val(url);

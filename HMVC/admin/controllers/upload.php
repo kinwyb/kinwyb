@@ -23,7 +23,7 @@ class Upload extends MY_Controller
 	public function imgup()
 	{
 		$updata=array(
-				"upload_path"=>"../uploads/images/",
+				"upload_path"=>"../uploads/arcimg/",
 				"allowed_types"=>'gif|jpg|png|jpeg|bmp',
 				"max_size"=>"2046",
 				"max_filename"=>"60",
@@ -65,11 +65,13 @@ class Upload extends MY_Controller
 	
 		$root_path = dirname(__FILE__) . '/../../uploads/';
 		$root_url = '/uploads/';
+	
 		//图片扩展名
 		$ext_arr = array('gif', 'jpg', 'jpeg', 'png', 'bmp');
+	
 		//目录名
 		$dir_name = empty($_GET['dir']) ? '' : trim($_GET['dir']);
-		if (!in_array($dir_name, array('', 'images', 'flash', 'file','media'))) {
+		if (!in_array($dir_name, array('', 'imgsarv', 'flash', 'arcimg', 'file'))) {
 			echo "Invalid Directory name.";
 			exit;
 		}
@@ -233,7 +235,7 @@ class Upload extends MY_Controller
 	{
 		$row=array();
 		$updata=array(
-				"upload_path"=>"../uploads/images/",
+				"upload_path"=>"../uploads/imgsarv/",
 				"allowed_types"=>'gif|jpg|png|jpeg|bmp',
 				"max_size"=>"2046",
 				"max_filename"=>"60",
