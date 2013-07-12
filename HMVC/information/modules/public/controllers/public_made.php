@@ -122,4 +122,24 @@ class Public_Public_Made_module extends CI_Module {
 		}
 		return $row;
 	}
+	
+	/**
+	 * 获取附加表数据
+	 * @param unknown $addtable
+	 * @param unknown $len
+	 * @return unknown
+	 */
+	public function shoppinpai($shopid,$len='')
+	{
+		! $this->ts_key('cache') AND $this->load->driver("cache",array('adapter' => $this->config->item('cache_type'), 'backup' => 'dummy'));
+		$row=$this->cache->get('shoppinpai_'.$shopid);
+		if(!is_array($row))
+		{
+			$this->load->model('main_data_model');
+			$row=$this->main_data_model->shoppinpai($shopid);
+			$this->cache->save('shoppinpai_'.$shopid,$row,0);
+		}
+		!empty($len) AND $len>count($row) And $row=array_slice($row,0,$len);
+		return $row;
+	}
 }

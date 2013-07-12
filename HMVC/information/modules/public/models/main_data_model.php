@@ -73,4 +73,13 @@ class Public_Main_data_model extends CI_Model {
 	{
 		return $this->db->select("webname,keywords,description,pagecache,cachetime")->get('system')->row_array();
 	}
+	
+	/**
+	 * 获取分类品牌
+	 * @param unknown $shopid
+	 */
+	public function shoppinpai($shopid)
+	{
+		return $this->db->select("pinpai.id,name,pinpai.litpic")->order_by("pinpai.xaixu desc")->where("allshop.typeid",$shopid)->join("pinpai","pinpai.id=allshop.pinpai")->group_by("pinpai.id")->get("allshop")->result_array();
+	}
 }

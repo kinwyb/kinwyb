@@ -183,9 +183,14 @@ class Arclist extends MY_Controller
 			echo false;
 			return ;
 		}
-		foreach ($data as $row)
-			$this->arc->chged($id,$row,$addtable);
-		echo true;
+		try {
+			foreach ($data as $row)
+				$this->arc->chged($id,$row,$addtable);
+			echo true;
+		} catch (Exception $e) {
+			echo false;
+		}
+		
 	}
 	
 	/**
